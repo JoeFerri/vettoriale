@@ -1,7 +1,5 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 
-https://github.com/italia/readme-starterkit
-
 ### Il progetto è fondamentalmente chiuso, data la sua natura di mero esercizio di coding.
 
 # Vettoriale
