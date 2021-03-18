@@ -54,6 +54,9 @@ vedi file package.json per le versioni:
 
     $ git clone https://github.com/JoeFerri/vettoriale
     $ cd ../path/to/the/file
+    $ npm install del-cli --save-dev
+    $ npm install npm-run-all --save-dev
+    $ npm install typescript --save-dev
     $ npm start
 
 ## installare le dipendenze per il testing
