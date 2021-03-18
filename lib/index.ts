@@ -17,3 +17,4 @@ export * from "./spazio-vettoriale";
 export * from "./matrice";
 export * from "./gauss";
 export * from "./set";
+export * from "./print";
