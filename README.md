@@ -94,6 +94,7 @@ Gli esempi sono stati generati utilizzando la funzione ```printOnOneLine``` del 
 ![esempio 1](esempio-1.png)
 ![esempio 2](esempio-2.png)
 ![esempio 3](esempio-3.png)
+![esempio 4](esempio-4.png)
 
 # Licenza 
 
