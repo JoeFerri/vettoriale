@@ -266,6 +266,6 @@ export class VettoreColonna extends VettoreLstR<VettoreColonna> {
   }
   
   toString() : string {
-    return this.lst.map( (v) => '\n|' + v.valore + '|' ).join('');
+    return this.lst.map( (v,index) => (index != 0 ? '\n' : '') + '|' + v.valore + '|' ).join('');
   }
 }
