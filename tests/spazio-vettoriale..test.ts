@@ -7,7 +7,6 @@
 
 import * as v from "../lib/index";
 import { expect, should } from 'chai';
-// require('chai').should()
 should();
 
 
@@ -47,9 +46,9 @@ describe(`modulo spazio-vettoriale`, function() {
       v.VettoreRiga.baseCanonica(v.naturale(3)).join(',').should.to.be.equal("|1,0,0|,|0,1,0|,|0,0,1|");
       
       v.VettoreColonna.baseCanonica(v.naturale(0)).join(',').should.to.be.equal("");
-      v.VettoreColonna.baseCanonica(v.naturale(1)).join(',').should.to.be.equal("\n|1|");
-      v.VettoreColonna.baseCanonica(v.naturale(2)).join(',').should.to.be.equal("\n|1|\n|0|,\n|0|\n|1|");
-      v.VettoreColonna.baseCanonica(v.naturale(3)).join(',').should.to.be.equal("\n|1|\n|0|\n|0|,\n|0|\n|1|\n|0|,\n|0|\n|0|\n|1|");
+      v.VettoreColonna.baseCanonica(v.naturale(1)).join(',').should.to.be.equal("|1|");
+      v.VettoreColonna.baseCanonica(v.naturale(2)).join(',').should.to.be.equal("|1|\n|0|,|0|\n|1|");
+      v.VettoreColonna.baseCanonica(v.naturale(3)).join(',').should.to.be.equal("|1|\n|0|\n|0|,|0|\n|1|\n|0|,|0|\n|0|\n|1|");
     });
 
   });

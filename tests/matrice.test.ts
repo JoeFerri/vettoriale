@@ -7,7 +7,6 @@
 
 import * as v from "../lib/index";
 import { expect, should } from 'chai';
-// require('chai').should()
 should();
 
 
@@ -210,7 +209,7 @@ describe(`modulo matrice`, function() {
     new v.Matrice([[1,2,3],[3,4,5],[6,7,8]]).toColonne()
       .map( (v) => ""+v )
       .reduce( (prev,curr) => prev + '\n--' + curr )
-      .should.to.be.equal("\n|1|\n|3|\n|6|\n--\n|2|\n|4|\n|7|\n--\n|3|\n|5|\n|8|");
+      .should.to.be.equal("|1|\n|3|\n|6|\n--|2|\n|4|\n|7|\n--|3|\n|5|\n|8|");
 
   });
 

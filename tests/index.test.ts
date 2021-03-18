@@ -5,12 +5,6 @@
 
 
 
-import * as v from "../lib/index";
-// import { expect } from 'chai';
-require('chai').should()
-
-
-
-describe(`modulo index`, function() {
-  ;
-});
+ import * as v from "../lib/index";
+ import { expect, should } from 'chai';
+ should();

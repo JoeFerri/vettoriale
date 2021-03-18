@@ -5,9 +5,9 @@
 
 
 
-import * as v from "../lib/index";
-// import { expect } from 'chai';
-require('chai').should()
+ import * as v from "../lib/index";
+ import { expect, should } from 'chai';
+ should();
 
 
 
