@@ -88,6 +88,13 @@ La struttura del progetto è autodeterminata dal meccanismo costruttivo di scrit
 ### Code of conduct
 [Codice di condotta](code_of_conduct.md)
 
+# Esempi su terminale
+Gli esempi sono stati generati utilizzando la funzione ```printOnOneLine``` del modulo *print.ts*.
+
+![esempio 1](esempio-1.png)
+![esempio 2](esempio-2.png)
+![esempio 3](esempio-3.png)
+
 # Licenza 
 
 ## Licenza generale 
