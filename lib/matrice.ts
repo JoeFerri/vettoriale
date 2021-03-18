@@ -313,9 +313,9 @@ export class Matrice extends Vettore<Reale> {
       .map(
         (v) => v.toArray().map( (v) => stringaCentrata(""+v.valore,max) ).join('|')
       )
-      .reduce( (prev,curr) => prev + '\n' + curr );
+      .reduce( (prev,curr) => prev + '|\n|' + curr );
 
-    return s;
+    return "|" + s + "|";
   }
 
 }
