@@ -29,6 +29,7 @@ attraverso l'implementazione di una libreria sugli spazi vettoriali. In particol
 # Indice
 
 - [Come iniziare](#come-iniziare)
+- [File di esempio](#file-di-esempio)
 - [Licenza](#licenza)
 
 # Come iniziare
@@ -67,6 +68,9 @@ vedi file package.json per le versioni:
 ## avviare i test coverage
 
     $ npm run coverage
+
+## File di esempio
+[File di esempio](example.ts)
 
 ## Documentazione
 Per la documentazione si vedano le note interne al codice sorgente.
