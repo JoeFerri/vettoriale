@@ -1,141 +1,84 @@
 /**
  * @author Giuseppe Ferri
- * @copyright 2021 Giuseppe Ferri. All rights reserved.
- * See LICENSE file in root directory for full license.
  */
 
 
 
-
-import { Reale, reale } from "./numeri";
-import { Matrice } from "./matrice";
-import { VettoreRiga } from "./spazio-vettoriale";
-
-
+import * as v from "../lib/index";
+import { expect, should } from 'chai';
+// require('chai').should()
+should();
 
 
-/**
- * Utilizzato come algoritmo di ordinamento lessicografico tra vettori riga.
- * 
- * @param {Reale[] } r1: un vettore riga di reali 
- * @param {Reale[] } r2: un vettore riga di reali 
- * @returns 0 se r1 == r2, altrimenti un numero negativo o positivo
- *          rispettivamente se r2 < r1, o r2 > r1
- */
-function sortRList(r1: Reale[], r2: Reale[]) : number {
+describe(`modulo gauss`, function() {
 
-  for (let i = 0; i < r1.length; i++)
-    if (r1[i].valore != r2[i].valore)
-      return r2[i].valore - r1[i].valore;
+  let m0 = new v.Matrice([[0]]);
+  let m00 = new v.Matrice([[0,0],[0,0]]);
+  let m000 = new v.Matrice([[0,0,0],[0,0,0],[0,0,0]]);
 
-  return 0;
-}
+  let m1 = new v.Matrice([[1]]);
+  let m11 = new v.Matrice([[1,1],[1,1]]);
+  let m111 = new v.Matrice([[1,1,1],[1,1,1],[1,1,1]]);
 
-
-/**
- * Utilizzato come filtro.
- * 
- * @param {Reale[]} v: un vettore di reali 
- * @returns true se la somma dei valori in v è diversa da 0, altrimenti false 
- */
-function filterR(v: Reale[]) {
-  return v.reduce(
-    (prev,curr) => prev.somma(curr), reale(0)
-  )
-  .valore != 0
-}
+  let m2 = new v.Matrice([[1,0],[0,1]]);
+  let m3 = new v.Matrice([[1,1],[2,2]]);
+  let m4 = new v.Matrice([[1,1,2],[2,2,3],[3,3,4]]);
+  let m5 = new v.Matrice([[1,2,3]]);
+  let m6 = new v.Matrice([[1,2,3,4,5],[1,1,1,2,2],[0,0,0,0,0],[3,3,0,0,2]]);
+  let m7 = new v.Matrice([ 
+    [1,1,1,2,2,1,3],
+    [1,1,2,2,3,3,3],
+    [0,2,2,2,2,2,1],
+    [3,3,3,3,1,1,2]
+  ]);
+  let m8 = new v.Matrice([[2],[1],[3],[2]]);
+  let m9 = new v.Matrice([[2,2],[1,2],[3,1],[2,3]]);
 
 
-/**
- * Calcola il numero di zeri a sinistra del primo valore non nullo.
- * 
- * @param {Reale[]} riga: una lista di reali 
- * @returns un numero
- */
-function sx0(riga: Reale[]) : number {
-  let lst: number[] = riga.map( v => v.valore ), count = 0;
-  for (let i = 0; i < lst.length; i++)
-    if (lst[i] == 0)
-      count++;
-    else
-      break;
-  return count;
-}
+  it(``, function() {
 
+    console.log(  v.printOnOneLine( m0.toString(), '    →    ', v.gauss(m0).toString() ),     '\n'  );
+    v.gauss(m0).toString().should.to.be.equal("||");
 
-/**
- * "L'algoritmo, attraverso l'applicazione di operazioni elementari dette mosse di Gauss,
- *  riduce la matrice in una forma detta a scalini." - Wikipedia
- * 
- * Nota: Non sono affatto sicuro che funzioni per ogni caso...
- * 
- * @todo riscrivere l'algoritmo poiché è stato buttato giu alla buona
- * @param {Matrice} matrice 
- * @param {number} precisione: sia aij il valore alla riga i e colonna j
- *                             se aij > -precisione and aij < precisione
- *                             allora aij viene interpretato uguale a 0
- * @param {number} fixed: massimo numero di cifre dopo la virgola dei valori aij 
- * @returns una nuova matrice a scalini
- */
-export function gauss(matrice: Matrice, precisione: number = 0.000000001, fixed: number = 4) : Matrice {
+    console.log( v.printOnOneLine(  m00.toString(), '    →    ', v.gauss(m00).toString() ),   '\n'  );
+    v.gauss(m00).toString().should.to.be.equal("||");
 
-  // caso limite, formalmente non sarebbe una matrice
-  if (matrice.n == 0)
-    return new Matrice([[]]);
+    console.log(  v.printOnOneLine( m000.toString(), '    →    ', v.gauss(m000).toString() ),'\n'  );
+    v.gauss(m000).toString().should.to.be.equal("||");
+    
+    console.log(  v.printOnOneLine( m1.toString() , '    →    ', v.gauss(m1).toString() ),    '\n'  );
+    v.gauss(m1).toString().should.to.be.equal("|1|");
 
-  // lavoro su una matrice di reali
-  let rrighe: Reale[][] =
-        matrice.toRighe()
-          .map( (v) => v.toArray() )
-          .sort(sortRList) // le righe sono ordinate con ordinamento lessicografico
-          .filter(filterR); // elimino i vettori riga nulli (tutti zeri)
-  
-  // tutte le righe erano vettori riga nulli
-  if (rrighe.length == 0)
-    return new Matrice([[]]);
+    console.log(  v.printOnOneLine( m11.toString(), '    →    ', v.gauss(m11).toString() ),   '\n'  );
+    v.gauss(m11).toString().should.to.be.equal("|1|1|");
 
-  // caso base: una sola riga
-  if (matrice.n == 1)
-    return Matrice.byArray(matrice.toArray(), matrice.n, matrice.m);
+    console.log(  v.printOnOneLine( m111.toString(), '    →    ', v.gauss(m111).toString() ),'\n'  );
+    v.gauss(m111).toString().should.to.be.equal("|1|1|1|");
 
-  // scorro tutte le colonne dopo la prima
-  for (let i = 1; i < rrighe.length; i++) {
-    // scorro tutte le colonne dalla i-esima in poi
-    for (let j = i; j < rrighe.length; j++) {
-      // ii è la posizione del pivot da considerare
-      let ii = i-1;
-      // gestisco il caso in cui ci siano degli zeri a sinistra del pivot
-      // scorro la posizione ii verso destra fino a trovare un valore non 0
-      while (rrighe[j][ii].valore == 0 && ii < rrighe.length) {
-        ii++;
-      }
-      
-      // modifico la riga soltanto se c'è lo stesso numero di zeri a sinistra dei pivot
-      // alle righe j e i-1
-      if (rrighe[j][ii].valore != 0 && ii < rrighe.length && sx0(rrighe[j]) == sx0(rrighe[i-1])) {
+    console.log(  v.printOnOneLine( m2.toString() , '    →    ', v.gauss(m2).toString() ),    '\n'  );
+    v.gauss(m2).toString().should.to.be.equal("|1|0|\n|0|1|");
 
-        let lambda = rrighe[j][ii].dividi(rrighe[i-1][ii]);
+    console.log(  v.printOnOneLine( m3.toString() , '    →    ', v.gauss(m3).toString() ),    '\n'  );
+    v.gauss(m3).toString().should.to.be.equal("|2|2|");
 
-        rrighe[j] =
-          new VettoreRiga(rrighe[j])
-            .sottrai(
-              new VettoreRiga(rrighe[i-1])
-                .moltiplicaPerScalare(lambda)
-            )
-            .toArray()
-            .map( v => v.valore > -precisione && v.valore < precisione ? reale(0) : reale( Number( v.valore.toFixed(fixed) ) ) );
-      }
-    }
-    rrighe =
-      rrighe.sort(sortRList) // è necessaria?
-        .filter(filterR);
-  }
+    console.log(  v.printOnOneLine( m4.toString() , '    →    ', v.gauss(m4).toString() ),    '\n'  );
+    v.gauss(m4).toString().clean(/ /g).should.to.be.equal("|3|3|4|\n|0|0|0.6667|");
+    
+    console.log(  v.printOnOneLine( m5.toString() , '    →    ', v.gauss(m5).toString() ),    '\n'  );
+    v.gauss(m5).toString().clean(/ /g).should.to.be.equal("|1|2|3|");
 
-  return new Matrice(rrighe);
-}
+    console.log(  v.printOnOneLine( m6.toString() , '    →    ', v.gauss(m6).toString() ),    '\n'  );
+    v.gauss(m6).toString().clean(/ /g).should.to.be.equal("|3|3|0|0|2|\n|0|1|3|4|4.3333|\n|0|0|1|2|1.3333|");
 
+    console.log(  v.printOnOneLine( m7.toString() , '    →    ', v.gauss(m7).toString() ),    '\n'  );
+    v.gauss(m7).toString().clean(/ /g).should.to.be.equal("|3|3|3|3|1|1|2|\n|0|2|2|2|2|2|1|\n|0|0|1|1|2.6667|2.6667|2.3333|\n|0|0|0|1|1.6667|0.6667|2.3333|");
+    
+    console.log(  v.printOnOneLine( m8.toString() , '    →    ', v.gauss(m8).toString() ),    '\n'  );
+    v.gauss(m8).toString().clean(/ /g).should.to.be.equal("|3|");
 
-export function gaussJordan(matrice: Matrice) : Matrice {
-  // TODO da implementare
-  throw new Error("Method not implemented.");
-}
+    console.log(  v.printOnOneLine( m9.toString() , '    →    ', v.gauss(m9).toString() ),    '\n'  );
+    v.gauss(m9).toString().clean(/ /g).should.to.be.equal("|3|1|\n|0|2.3333|");
+
+  });
+
+});
