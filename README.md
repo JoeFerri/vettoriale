@@ -1,4 +1,5 @@
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+![GitHub issues](https://img.shields.io/github/issues/JoeFerri/vettoriale)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 
 ### Il progetto è fondamentalmente chiuso, data la sua natura di mero esercizio di coding.
