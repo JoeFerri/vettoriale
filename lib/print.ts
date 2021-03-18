@@ -59,7 +59,7 @@ export function printOnOneLine(...strs: string[]) {
   }
 
   let stampa = "";
-  // creo la matrice inversa per il terminale
+  // creo la matrice trasposta per il terminale
   for (let j = 0; j < maxRighe; j++) {
     let colonna = "";
     for (let i = 0; i < matrice.length; i++) {
