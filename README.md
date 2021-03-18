@@ -55,6 +55,11 @@ vedi file package.json per le versioni:
     $ cd ../path/to/the/file
     $ npm start
 
+## installare le dipendenze per il testing
+    $ cd ../path/to/the/file
+    $ npm i -D chai mocha nyc ts-node typescript
+    $ npm i -D @types/chai @types/mocha
+
 ## avviare i test
 
     $ npm t
