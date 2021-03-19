@@ -98,6 +98,7 @@ La struttura del progetto è autodeterminata dal meccanismo costruttivo di scrit
 # Esempi su terminale
 Gli esempi sono stati generati utilizzando la funzione ```printOnOneLine``` del modulo *print.ts*.
 
+![esempio 1.1](esempio-1.1.png)
 ![esempio 2](esempio-2.png)
 ![esempio 3](esempio-3.png)
 ![esempio 4](esempio-4.png)
