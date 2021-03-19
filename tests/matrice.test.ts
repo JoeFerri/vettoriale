@@ -28,42 +28,6 @@ describe(`modulo matrice`, function() {
   let m4 = new v.Matrice([[1,1/2],[1,1/2],[1,1/2]]);
   let m5 = new v.Matrice([[0,1,2],[3,4],[5,6,7]]);
 
-  // console.log( m0.toString() );
-
-  // console.log( m1.toString() );
-  // console.log(' +');
-  // console.log( m2.toString() );
-  // console.log(' =');
-  // console.log( m1.somma(m2).toString() );
-  
-  // console.log('\n-------\n');
-  // console.log( m1.toString() );
-  // console.log(' -');
-  // console.log( m2.toString() );
-  // console.log(' =');
-  // console.log( m1.sottrai(m2).toString() );
-  
-  // console.log('\n-------\n');
-  // console.log( m1.toString() );
-  // console.log(' *');
-  // console.log( '0.5' );
-  // console.log(' =');
-  // console.log( m1.moltiplicaPerScalare(v.reale(0.5)).toString() );
-  
-  // console.log('\n-------\n');
-  // console.log( m1.toString() );
-  // console.log(' *');
-  // console.log( m4.toString() );
-  // console.log('   =');
-  // console.log( m1.moltiplica(m4).toString() );
-  
-  // console.log('\n-------\n');
-  // console.log( m1.toString() );
-  // console.log(' /');
-  // console.log( m3.toString() );
-  // console.log(' =');
-  // console.log( m1.dividi(m3).toString() );
-
   it(`#somma() ; #sottrai()`, function() {
 
     expect( () => m0.somma(m00) ).to.throw();
@@ -131,7 +95,7 @@ describe(`modulo matrice`, function() {
 
   });
 
-  it(`#moltiplica() ; #dividi()`, function() {
+  it(`#moltiplica()`, function() {
 
     m1.moltiplica(m000)
       .toArray()
@@ -152,12 +116,6 @@ describe(`modulo matrice`, function() {
       .should.to.be.equal("6,6,3,3,0,0");
 
     m1.moltiplica(m4)
-      .toArray()
-      .map( (v) => v.valore )
-      .join(',')
-      .should.to.be.equal("6,3,3,1.5,0,0");
-
-      m1.dividi(m3)
       .toArray()
       .map( (v) => v.valore )
       .join(',')

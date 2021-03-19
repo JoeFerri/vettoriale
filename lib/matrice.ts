@@ -232,18 +232,6 @@ export class Matrice extends Vettore<Reale> {
     return new Matrice(matrice);
   }
 
-  /**
-   * Mappa tutti i valori della matrice t in valori del tipo 1/t,
-   * quindi effettua una moltiplicazione righe per colonne tra
-   * la matrice e t.
-   * 
-   * @param {Matrice} t: una matrice 
-   * @returns una nuova matrice 
-   */
-  dividi(t: Matrice): Matrice {
-    return this.moltiplica( Matrice.byArray( t.toArray().map( (v) => reale(1).dividi(v)),t.n,t.m ) );
-  }
-
   // vedi le applicazioni in Algebra Lineare
   toArray(): Reale[] {
     let lst: Reale[] = [];

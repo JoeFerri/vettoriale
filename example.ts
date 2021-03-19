@@ -38,7 +38,6 @@ console.print( m000, "   +   ", m000, "   =   ", m000.somma(m000) );
 console.print( m111, "   +   ", m111, "   =   ", m111.somma(m111) );
 console.print( m2,   "   -   ", m111, "   =   ", m2.sottrai(m111) );
 console.print( m1,   "   *   ", m4,   "   =   ", m1.moltiplica(m4) );
-console.print( m1,   "   /   ", m3,   "   =   ", m1.dividi(m3) );
 
 //! il metodo moltiplicaPerScalare() vuole un oggetto di tipo Reale
 console.print( m1,   "   *   ", 0.5,  "   =   ", m1.moltiplicaPerScalare(v.reale(0.5)) );
