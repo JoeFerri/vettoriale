@@ -90,6 +90,9 @@ La struttura del progetto è autodeterminata dal meccanismo costruttivo di scrit
 - - - - - - matrice.ts
 - - - - - - - gauss.ts
 
+### diagramma UML delle classi
+[link](lib_diagram.png)
+
 ## Community
 
 ### Code of conduct
