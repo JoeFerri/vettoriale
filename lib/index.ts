@@ -1,7 +1,8 @@
 /**
  * @author Giuseppe Ferri
- * @copyright 2021 Giuseppe Ferri. All rights reserved.
- * See LICENSE file in root directory for full license.
+ * @license LGPL-3.0
+ *
+ * Copyright (c) 2021, Giuseppe Ferri <jfinfoit@gmail.com>
  */
 
 
